@@ -1,9 +1,10 @@
 <h1>New entity</h1>
 
-<%= render "form", entity: @entity %>
+<%= form_for :entity, url: group_entities_path(@group), method: :post do |form|  %>
+  <div>
+    <%= form.text_field :name, placeholder: 'Name' %>
+    <%= form.text_field :amount, placeholder: 'Amount' %>
+    <%= form.submit "Submit" %>
+  </div>
+<% end %>
 
-<br>
-
-<div>
-  <%= link_to "Back to entities", entities_path %>
-</div>

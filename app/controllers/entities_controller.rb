@@ -1,35 +1,28 @@
 class EntitiesController < ApplicationController
-  before_action :set_entity, only: %i[show edit update destroy]
-
-  # GET /entities or /entities.json
   def index
-    @group = current_user.groups.find(params[:group_id])
+    @group = current_user.groups.find_by(id: params[:group_id])
   end
 
-  # GET /entities/new
   def new
-    @group = Group.find(params[:group_id])
+    @group = Group.find_by(id: params[:group_id])
     @entity = Entity.new
   end
 
-   # POST /entities or /entities.json
   def create
-    @group = Group.find(params[:group_id])
-    @entity = @group.entities.new(entity_params)
-
+    @group = Group.find_by(id: params[:group_id])
+    @entity = @group.entities.new(name: entity_params[:name],
+                                  amount: entity_params[:amount], user_id: current_user.id)
     if @entity.save
       flash[:notice] = 'Transaction is completed'
-      redirect_to group_entities_path(@category)
+      redirect_to group_entities_path(@group)
     else
-      flash[:notice] = 'Invalid Transaction!'
+      flash[:notice] = 'Invalid entity!'
     end
   end
 
-
   private
 
-   # Only allow a list of trusted parameters through.
   def entity_params
-    params.require(:entity).permit(:name, :amount, :user_id)
+    params.require(:entity).permit(:name, :amount)
   end
 end

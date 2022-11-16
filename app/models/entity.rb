@@ -2,6 +2,7 @@ class Entity < ApplicationRecord
   belongs_to :user
   belongs_to :group
 
-  validates :name, :amount, :user_id, presence: true
-  validates :amount, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
+  validates :name, presence: true, length: { maximum: 250 }
+  validates :amount, presence: true, numericality: { greater_than: 0, less_than: 999_999_999 }
+  validates :user_id, presence: true
 end

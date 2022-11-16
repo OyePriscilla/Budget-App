@@ -1,10 +1,10 @@
 <div>
   <ul>
-<% @groups.includes(:entities).each do |item| %>
+<% @groups.each do |item| %>
   <li>
     <ul>
     <li>
-        <%= item.name %>
+        <%= link_to item.name, group_entities_path(group_id: item.id) %>
       </li>
       <li>
         <%= image_tag(url_for item.icon) if item.icon.attached? %>
