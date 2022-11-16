@@ -9,7 +9,7 @@ class Group < ApplicationRecord
   def total_amount
     total = 0
     entities.each do |ent|
-        total += ent.amount
+      total += ent.amount
     end
     total
   end
