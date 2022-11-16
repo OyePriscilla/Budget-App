@@ -1,0 +1,18 @@
+<nav class="navbar">
+   <div class='nav-list'>
+    <% unless current_user%>
+    <%= form_with model: User.new, url: new_user_session_path, method: :get, class:'log' do %>
+      <button> Sign in</button>
+    <% end %>
+    <%= form_with model: User.new, url: new_user_registration_path, method: :get, class:'log' do %>
+      <button>Sign up</button>
+    <% end %>
+  <% end %>
+  <% if current_user %>
+      <%= link_to "Sign-out", destroy_user_session_path %>
+    <span class='alert'>
+     <p>Welcome <%= current_user.name%></p>
+    </span>
+  <% end %>
+  </div>
+</nav>

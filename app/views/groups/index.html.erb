@@ -1,0 +1,23 @@
+<div>
+  <ul>
+<% @groups.each do |item| %>
+  <li>
+    <ul>
+    <li>
+        <%= link_to item.name, group_entities_path(group_id: item.id) %>
+      </li>
+      <li>
+        <%= image_tag(url_for item.icon) if item.icon.attached? %>
+      </li>
+      <li>
+        <span><%= item.created_at.strftime("%d-%m-%Y") %></span>
+      </li>
+      <li>
+        <span>$<%= item.total_amount %></span>
+      </li>
+    </ul>
+  </li>
+<% end %>
+</ul>
+  <%= link_to "Create Category", new_group_path, class: "btn-link btn-primary el-center active submit" %>
+</div>
