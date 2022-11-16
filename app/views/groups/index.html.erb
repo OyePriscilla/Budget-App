@@ -1,14 +1,23 @@
-<p style="color: green"><%= notice %></p>
-
-<h1>Groups</h1>
-
-<div id="groups">
-  <% @groups.each do |group| %>
-    <%= render group %>
-    <p>
-      <%= link_to "Show this group", group %>
-    </p>
-  <% end %>
+<div>
+  <ul>
+<% @groups.includes(:entities).each do |item| %>
+  <li>
+    <ul>
+    <li>
+        <%= item.name %>
+      </li>
+      <li>
+        <%= image_tag(url_for item.icon) if item.icon.attached? %>
+      </li>
+      <li>
+        <span><%= item.created_at.strftime("%d-%m-%Y") %></span>
+      </li>
+      <li>
+        <span>$<%= item.total_amount %></span>
+      </li>
+    </ul>
+  </li>
+<% end %>
+</ul>
+  <%= link_to "Create Category", new_group_path, class: "btn-link btn-primary el-center active submit" %>
 </div>
-
-<%= link_to "New group", new_group_path %>
