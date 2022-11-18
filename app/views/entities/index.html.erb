@@ -6,8 +6,11 @@
 <h2 class='login-header'>Transactions</h2>
       <%= link_to "Sign-out", destroy_user_session_path, class: 'actions' %>
 </div>
-
-  <% @group.entities.each do |entity| %>
+<ul class="total_price">
+ <li>Total Price</li>
+  <li>$<%= @group.total_amount %></li>
+</ul>
+  <% @entities.each do |entity| %>
   <ul class='transaction-details'>
     <li>
     <%= entity.name %>

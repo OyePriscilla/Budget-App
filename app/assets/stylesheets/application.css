@@ -153,7 +153,8 @@ a {
   color: #fff;
 }
 
-.transaction-details {
+.transaction-details,
+.total_price {
   display: flex;
   background-color: #fff;
   padding: 25px;

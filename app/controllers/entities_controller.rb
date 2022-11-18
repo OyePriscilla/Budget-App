@@ -1,6 +1,7 @@
 class EntitiesController < ApplicationController
   def index
     @group = current_user.groups.find_by(id: params[:group_id])
+    @entities = @group.entities.order(created_at: :desc)
   end
 
   def new
