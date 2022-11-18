@@ -1,5 +1,5 @@
 class GroupsController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except: :splash
 
   # GET /groups or /groups.json
   def index
@@ -22,6 +22,12 @@ class GroupsController < ApplicationController
       flash[:notice] = 'Invalid Entry'
       redirect_to new_group_path
     end
+  end
+
+  def splash
+    return unless current_user
+
+    redirect_to groups_path
   end
 
   private
