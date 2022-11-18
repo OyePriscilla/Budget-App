@@ -25,6 +25,25 @@ body {
   align-items: center;
 }
 
+a {
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 22px;
+}
+
+.password a {
+  display: block;
+  text-align: center;
+  margin-top: 5px;
+  font-size: 18px;
+  color: #929292;
+}
+
+.login-details a {
+  padding-left: 10px;
+  color: #fff;
+}
+
 .budgetapp-container a:first-child {
   margin-bottom: 10px;
   background-color: #3778c2;
@@ -37,12 +56,6 @@ body {
 
 .budgetapp-container a:nth-child(2) {
   color: #929292;
-}
-
-a {
-  text-decoration: none;
-  font-weight: 500;
-  font-size: 22px;
 }
 
 .actions {
@@ -75,11 +88,6 @@ a {
   color: #fff;
   padding-left: 30%;
   font-weight: 400;
-}
-
-.login-details a {
-  padding-left: 10px;
-  color: #fff;
 }
 
 .field input {
