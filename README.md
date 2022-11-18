@@ -2,7 +2,9 @@
 
 This is an application built with ruby on rails to solidify my knowlegde on MVC.
 
-Additional description about the project and its features.
+## Access the [Live Demo](https://murmuring-dawn-20339.herokuapp.com/)
+
+## [Project Presentation](https://www.loom.com/share/f89675a87bbf4d3bbff42a24073ec1d6)
 
 ## Built With
   - Ruby
