@@ -1,0 +1,9 @@
+<header>
+   <h2><%= title %></h2>
+  <% if user_signed_in? %>
+    <%= link_to destroy_user_session_path, method: :delete, class: 'absolute right-0 bottom-0 h-full flex items-center px-2 box-border' do %>
+      <span class="fa-solid fa-arrow-right-to-bracket text-2xl font-bold">
+      </span>
+    <% end %>
+  <% end %>
+</header>

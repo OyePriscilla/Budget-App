@@ -1,23 +1,24 @@
+<div class="login-details">
+  <%= link_to groups_path do %>
+   <span class="fa-solid fa-home">
+    </span>
+  <% end %>
+<h2 class='login-header'>Log in</h2>
+  <%= link_to "Sign Out", destroy_user_session_path, class: "actions" %>
+</div>
+
 <div>
-  <ul>
 <% @groups.each do |item| %>
-  <li>
-    <ul>
-    <li>
+  <div class='cate-wrapper'>
+    <div class='cate-details'>
+      <%= image_tag item.icon, width: '100px', height: '100px' if item.icon.attached? %>
+      <div class='cate-name'>
         <%= link_to item.name, group_entities_path(group_id: item.id) %>
-      </li>
-      <li>
-        <%= image_tag(url_for item.icon) if item.icon.attached? %>
-      </li>
-      <li>
         <span><%= item.created_at.strftime("%d-%m-%Y") %></span>
-      </li>
-      <li>
-        <span>$<%= item.total_amount %></span>
-      </li>
-    </ul>
-  </li>
+      </div>
+    </div>
+    <span>$<%= item.total_amount %></span>
+  </div>
 <% end %>
-</ul>
-  <%= link_to "Create Category", new_group_path, class: "btn-link btn-primary el-center active submit" %>
+  <%= link_to "Create Category", new_group_path, class: "create-category" %>
 </div>

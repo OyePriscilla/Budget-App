@@ -1,9 +1,16 @@
-<h1>New entity</h1>
+<div class="login-details">
+  <%= link_to group_entities_path do %>
+   <span class="fa-solid fa-chevron-left">
+    </span>
+  <% end %>
+<h2 class='login-header'>New Transaction</h2>
+      <%= link_to "Sign-out", destroy_user_session_path, class: 'actions' %>
+</div>
 
 <%= form_for :entity, url: group_entities_path(@group), method: :post do |form|  %>
-  <div>
-    <%= form.text_field :name, placeholder: 'Name' %>
-    <%= form.text_field :amount, placeholder: 'Amount' %>
+  <div class='transact-form'>
+    <%= form.text_field :name, placeholder: 'Name' %> </br>
+    <%= form.text_field :amount, placeholder: 'Amount' %> </br>
     <%= form.submit "Submit" %>
   </div>
 <% end %>
