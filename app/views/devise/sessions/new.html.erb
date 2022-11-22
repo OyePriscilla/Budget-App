@@ -1,0 +1,27 @@
+<div class="login-details">
+  <%= link_to splash_path do %>
+   <span class="fa-solid fa-chevron-left">
+    </span>
+  <% end %>
+
+<h2 class='login-header'>Log in</h2>
+</div>
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <div class="field">
+    <%= f.email_field :email, placeholder: "Email" %>
+  </div>
+
+  <div class="field">
+    <%= f.password_field :password, placeholder: "Password" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Log in" %>
+  </div>
+<% end %>
+
+<div class='password'>
+<%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
+  <%= link_to "Forgot your password?", new_password_path(resource_name) %><br />
+<% end %>
+</div>

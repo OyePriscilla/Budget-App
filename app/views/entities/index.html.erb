@@ -1,0 +1,24 @@
+<div class="login-details">
+  <%= link_to groups_path do %>
+   <span class="fa-solid fa-chevron-left">
+    </span>
+  <% end %>
+<h2 class='login-header'>Transactions</h2>
+      <%= link_to "Sign-out", destroy_user_session_path, class: 'actions' %>
+</div>
+<ul class="total_price">
+ <li>Total Price</li>
+  <li>$<%= @group.total_amount %></li>
+</ul>
+  <% @entities.each do |entity| %>
+  <ul class='transaction-details'>
+    <li>
+    <%= entity.name %>
+    </li>
+    <li>
+    $<%= entity.amount %>
+    </li>
+  </ul>
+  <% end %>
+
+<%= link_to "New Transaction", new_group_entity_path, class: 'create-category' %>

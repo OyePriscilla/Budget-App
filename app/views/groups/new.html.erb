@@ -1,0 +1,19 @@
+<div class="login-details">
+  <%= link_to groups_path do %>
+   <span class="fa-solid fa-chevron-left">
+    </span>
+  <% end %>
+<h2 class='login-header'>Create Category</h2>
+      <%= link_to "Sign-out", destroy_user_session_path, class: 'actions' %>
+</div>
+<div>
+<%= form_for :group, url: groups_path, method: :post do |form|  %>
+  <div class='category_form'>
+    <%= form.text_field :name, placeholder: 'Category Name' %>
+    Insert icon  <%= form.file_field :icon %>
+    <%= form.submit "Submit" %>
+  </div>
+<% end %>
+
+
+
