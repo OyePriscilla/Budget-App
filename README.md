@@ -1,8 +1,6 @@
 # Budget App
 
-This is an application built with ruby on rails to solidify my knowlegde on MVC.
-
-## Access the [Live Demo](https://murmuring-dawn-20339.herokuapp.com/)
+This is an application built with ruby on rails, is about building a mobile web application where you can manage your budget: you have a list of transactions associated with a category, so that you can see how much money you spent and on what.
 
 ## [Project Presentation](https://www.loom.com/share/f89675a87bbf4d3bbff42a24073ec1d6)
 
